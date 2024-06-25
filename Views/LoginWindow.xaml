@@ -1,0 +1,60 @@
+﻿<Window x:Class="HotelManagementSystem.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ff="clr-namespace:HotelManagementSystem.Views"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelManagementSystem.Views" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        DataContext="{StaticResource LoginVM}"
+        Name="loginWindow"
+        Title="Login" Height="760" Width="450"
+        WindowStartupLocation="CenterScreen"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        ResizeMode="NoResize"
+        Icon="D:\2_Learnspace\2_FPT\Semester 5\PRN212\05_Asignment\HotelManagementSystem\Assets\Icons\hotel.ico">
+    <StackPanel Margin="40">
+
+        <Image Source="D:\2_Learnspace\2_FPT\Semester 5\PRN212\05_Asignment\HotelManagementSystem\Assets\Images\hotel.png"
+               Width="100" Margin="0 50 0 0"/>
+        <TextBlock HorizontalAlignment="Center"
+                   FontWeight="Bold"
+                   FontSize="30"
+                   Margin="0 30 0 0">Welcome Back!</TextBlock>
+        <TextBlock HorizontalAlignment="Center"
+                   FontWeight="Bold"
+                   FontSize="15"
+                   Margin="0 15 0 40">Log in to your account</TextBlock>
+        <TextBox materialDesign:HintAssist.Hint="Email"
+                 x:Name="EmailTxtBox"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                 Width="350"
+                 FontSize="20"
+                 Margin="0 0 0 20"
+                 Text="{Binding Email}"/>
+        <PasswordBox x:Name="PasswordTxtBox"
+                     materialDesign:HintAssist.Hint="Password"
+                     Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" 
+                     Width="350"
+                     FontSize="20"
+                     Margin="0 0 0 20"
+                     ff:PasswordBoxAssistant.BindPassword="true" 
+                     ff:PasswordBoxAssistant.BoundPassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     />
+        <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Width="350"
+                ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                Margin="0 0 0 20"
+                x:Name="btnSignIn"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=loginWindow}">
+            _Sign In
+        </Button>
+
+        <TextBlock FontSize="15"
+            HorizontalAlignment="Left"
+            Margin="7 0 0 20"
+            ><Hyperlink>Forget password?</Hyperlink></TextBlock>
+    </StackPanel>
+</Window>
