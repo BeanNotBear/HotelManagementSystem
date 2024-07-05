@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         DataContext="{StaticResource LoginVM}"
         Name="loginWindow"
-        Title="Login" Height="760" Width="450"
+        Title="HTMS" Height="760" Width="450"
         WindowStartupLocation="CenterScreen"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         ResizeMode="NoResize"

@@ -1,6 +1,7 @@
 ﻿using HotelManagementSystem.Interfaces;
 using HotelManagementSystem.Repositories;
 using HotelManagementSystem.Security;
+using HotelManagementSystem.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
 using System.Data;
@@ -13,13 +14,19 @@ namespace HotelManagementSystem
     /// </summary>
     public partial class App : Application
     {
-
-        protected override void OnStartup(StartupEventArgs e)
+        public App()
         {
             IServiceCollection services = new ServiceCollection();
             services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<IRoomRepository, RoomRepository>();
             services.AddSingleton<Hashing>();
-            base.OnStartup(e);
+            services.AddSingleton<MainViewModel>();
+            services.AddSingleton<LoginViewModel>();
+            services.AddSingleton<HeaderViewModel>();
+            services.AddSingleton<BaseViewModel>();
+            services.AddSingleton<ReceptionistNavbarViewModel>();
+            services.AddSingleton<AdminNavbarViewModel>();
+            services.AddSingleton<RoomViewModel>();
         }
     }
 

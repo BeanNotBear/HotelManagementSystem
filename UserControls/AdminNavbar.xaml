@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="HotelManagementSystem.UserControls.AdminNavbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelManagementSystem.UserControls"
+             DataContext="{StaticResource MainVM}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="200">
+    <UserControl.Resources>
+        <Style TargetType="StackPanel">
+            <Setter Property="Width" Value="200"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="AntiqueWhite">
+        <StackPanel Orientation="Vertical">
+            <Button
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                Margin="5"
+                ToolTip="Resource name: MaterialDesignRaisedButton"
+                Command="{Binding HeaderCommand}"
+                CommandParameter="Dashboard">
+                Dashboard
+            </Button>
+            <Button
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                Margin="5"
+                ToolTip="Resource name: MaterialDesignRaisedButton"
+                Command="{Binding HeaderCommand}"
+                CommandParameter="Manage Room">
+                Manage Room
+            </Button>
+            <Button
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                Margin="5"
+                ToolTip="Resource name: MaterialDesignRaisedButton"
+                Command="{Binding HeaderCommand}"
+                CommandParameter="Manage User">
+                Manage User
+            </Button>
+            <Button
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                Margin="5"
+                ToolTip="Resource name: MaterialDesignRaisedButton"
+                Command="{Binding HeaderCommand}"
+                CommandParameter="Reports">
+                Reports
+            </Button>
+            <Button
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                Margin="5"
+                ToolTip="Resource name: MaterialDesignRaisedButton"
+                Command="{Binding HeaderCommand}"
+                CommandParameter="Settings">
+                Settings
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

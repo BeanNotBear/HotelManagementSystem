@@ -2,7 +2,7 @@
 using HotelManagementSystem.Interfaces;
 using HotelManagementSystem.Models;
 using HotelManagementSystem.Repositories;
-using HotelManagementSystem.ViewModel;
+using HotelManagementSystem.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +19,7 @@ namespace HotelManagementSystem.ViewModels
         private IUserRepository _userRepository;
         private HotelManagementDbContext _context;
         private string _email;
+        public User authenticatedUser { get; set; }
         public string Email
         {
             get { return _email; }
@@ -73,6 +74,7 @@ namespace HotelManagementSystem.ViewModels
                 if (user != null)
                 {
                     IsLoginSuccessful = true;
+                    authenticatedUser = user;
                     p.Close();
                 }
                 else

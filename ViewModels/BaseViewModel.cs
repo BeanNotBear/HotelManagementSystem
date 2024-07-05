@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace HotelManagementSystem.ViewModel
+namespace HotelManagementSystem.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
